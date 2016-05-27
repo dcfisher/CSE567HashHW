@@ -40,11 +40,9 @@ class LinHash:
           count = 1
           while(count <= self.size):
                if(self.table[h] == -1):
-                    print("not found")
                     return count
 
                elif(self.table[h].getKey() == kv.getKey()):
-                    print("found")
                     return count
                     
                else:
