@@ -2,25 +2,25 @@ class KeyValue:
 
 	keyValCount = 0
 
-	def __init__(self,v,k):
+	def __init__(self,k,v):
 		self.key = k
 		self.value = v
 		KeyValue.keyValCount += 1
 
-	def getKey():
+	def getKey(self):
 		return self.key
 
-	def getValue():
+	def getValue(self):
 		return self.value
 
-	def setValue(v):
+	def setValue(self,v):
 		self.value = v
 
-	def setKey(k):
+	def setKey(self,k):
 		self.key = k
 
 	def getCount():
 		return KeyValue.keyValCount
 
-	def hashFunctionGR():
-		return (.618033*self.key)%100
+	def hashFunctionGR(self,s):
+		return (.618033*self.key)%s
