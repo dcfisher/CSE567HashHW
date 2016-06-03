@@ -23,4 +23,5 @@ class KeyValue:
 		return KeyValue.keyValCount
 
 	def hashFunctionGR(self,s):
-		return (.618033*self.key)%s
+		return (1.618033*self.key)%s
+

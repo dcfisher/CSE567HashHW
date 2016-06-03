@@ -4,7 +4,8 @@ class LinHash:
           self.table = [-1 for i in range(size)]
           self.size = size
 
-     def insert(self,i,val):
+     def insertD(self,i,val,size):
+          self.size = size
           if(self.table[i] == -1):
                self.table[i] = val
           else:
@@ -31,8 +32,12 @@ class LinHash:
                                 print("Index %d: Key = %d   Value = %s" %(count, t.getKey(),t.getValue()))
                         count +=1      
 
-     def delete(self,i):
-          self.table[i] = -1
+     def delete(self,kv):
+          h = kv.hashFunctionGR(self.size)
+          h = int(h)
+          c = self.find(kv)
+          h += c-1
+          self.table[h] = -1
 
      def find(self,kv):
           h = kv.hashFunctionGR(self.size)
@@ -41,13 +46,16 @@ class LinHash:
           while(count <= self.size):
                if(self.table[h] == -1):
                     return count
-
                elif(self.table[h].getKey() == kv.getKey()):
                     return count
-                    
                else:
                      h+=1
                      count+=1
                      if(h >= self.size):
                           h = 0
-          return count   
+          return count
+
+
+
+
+          
